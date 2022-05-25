@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+<style type="text/css">
+	*{
+		padding: 0;
+		margin: 0;
+		box-sizing: border-box;
+		font-family: cursive;
+	}
+	.container{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+		width: 100vw;
+
+
+
+	}
+	button{
+		padding: 10px;
+		border-radius: 10px;
+		border: none;
+		font-size: 20px;
+		background: #149de1;
+		color: white;
+		margin-left: 30px;
+
+
+	}
+	
+	
+	.copy{
+		display: block;
+		color: black;
+		animation-name: hello;
+		animation-duration: 2s;
+		color: black;
+		animation-fill-mode: forwards;
+	}
+	p{
+		font-size: 20px;
+		position: absolute;
+		left: 440px;
+		top: 100px;
+		font-size: 50px;
+		color: lightgrey;
+	}
+	
+
+
+</style>
+<body>
+	<div class="container">
+		<div class="small-container">
+			<p class="p"></p>
+		
+		<h1>Background-changer</h1>
+		<input type="color" name="" id="color-range"><button class="copybc"> Copy The Background Color</button>
+		<h1>font-color change</h1>
+		<input type="color" name="" id="text-range"><button class="copytxt"> Copy The text Color</button>
+		
+		
+
+	</div>
+	</div>
+
+</body>
+<script type="text/javascript">
+	$(document).ready(function(){
+	                                             // Some Jquery mess
+
+
+//To get the change of color value of background
+		$('#color-range').on("input change",function(){
+			$('body').css("background-color",$(this).val());
+
+		});
+
+//TO get the change of color value of text
+		
+		$('#text-range').on("input change",function(){
+			$('h1').css("color",$(this).val());
+
+		});
+//When the button is clicked: 
+		$('.copybc').click(function(){
+
+	//TO copy the value of color code of background		
+			var temp=$("<input>");
+			$('body').append(temp);
+			temp.val($("#color-range").val()).select();
+			document.execCommand("copy");
+			temp.remove();
+
+
+	//TO form the text "copied" in body when button is clicked		
+			$('p').html("copied!");
+				$('p').css("color","#149de1");
+				$('p').fadeIn(1000);
+				$('p').fadeOut(1000);		
+
+		})
+
+		$('.copytxt').click(function(){
+
+	//TO copy the value of color code of background		
+			var temp=$("<input>");
+			$('body').append(temp);
+			temp.val($("#text-range").val()).select();
+			document.execCommand("copy");
+			temp.remove();
+
+
+	//TO form the text "copied" in body when button is clicked		
+			$('p').html("copied!");
+				$('p').css("color","#149de1");
+				$('p').fadeIn(1000);
+				$('p').fadeOut(1000);		
+
+		})
+
+	})
+
+
+
+
+	
+</script>
+</html>

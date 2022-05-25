@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<style type="text/css">
+	*{
+		padding: 0;
+		margin: 0;
+		font-family: ;
+
+	}
+	.main-container{
+		width: 100vw;
+		height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background: #000010;
+		flex-direction: column;
+		color: white;
+	}
+	.content{
+		display: flex;
+		background: ;
+		justify-content: space-between;
+		
+		height: 30%;
+		width: 60%;
+		border-radius: 20px;
+		font-size: 70px;
+	}
+	.items{
+		background: #27a3b9;;
+		width: 30%;
+	 display: flex;
+	 justify-content: center;
+	 align-items: center;
+	 font-size: 30px;
+	 border-radius: 20px;
+	 border: 3px solid aqua;
+	 box-shadow: 2px 2px 12px  aqua;
+	 
+
+
+	}
+	h1{
+		color: #fff;
+
+	}
+	span{
+		margin-top: 50px;
+	}
+	
+
+center{
+	font-size: 60px;
+}
+hr{
+	width: 150px;
+	height: 8px;
+	background: aqua;
+	margin-top: -10px;
+	box-shadow: 2px 2px 12px  aqua;
+
+
+}
+button{
+	margin-top: 20px;
+	width: 30%;
+	border-radius: 20px;
+	height: 10%;
+	background: #d82225;
+	color: white;
+	font-size: 25px;
+
+
+}
+
+
+
+	
+
+
+</style>
+<body>
+	<div class="main-container">
+		<center >Time</center><hr><br></p>
+		<div class="content">
+
+			<div class="items content-1"><p><h1 id="first"></h1></div><span>:</span>
+			<div class="items content-2"><h1 id="second"></h1></div><span>:</span>
+			<div class="items content-3"><h1 id="third"></h1></div>
+			
+		</div>
+		<button>Bored?click here</button>
+	</div>
+
+</body>
+<script type="text/javascript">
+	$(document).ready(function(){
+		
+		function distime() {
+			var date=new Date();
+		
+		$('#first').html(date.getHours());
+		$('#second').html(date.getMinutes());
+		$('#third').html(date.getSeconds());
+	}
+	setInterval(distime,10);
+
+
+
+		//Mind bowling sound
+		$('button').click(function(){
+
+
+
+		var music=new Audio();
+		music.src="./a.mp3";
+		music.play();
+	})
+
+
+
+	})
+	
+
+</script>
+</html>
